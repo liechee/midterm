@@ -1,0 +1,50 @@
+//1
+// const dateToHours = function (date1: Date, date2: Date): number {
+//   let diff = Number(date1) - Number(date2);
+//   let inHours = diff * 24;
+//   return inHours;
+// };
+
+//2
+const convertHex = function (value: string): number {
+  const len = value.length;
+  let base = 1;
+  let decVal = 0;
+
+  for (let i = len - 1; i >= 0; i--) {
+    if (value.charAt(i) >= "0" && value.charAt(i) <= "9") {
+      decVal += (value.charAt(i).charCodeAt(0) - 48) * base;
+      base = base * 16;
+    } else if (value.charAt(i) >= "A" && value.charAt(i) <= "F") {
+      decVal += (value.charAt(i).charCodeAt(0) - 55) * base;
+      base = base * 16;
+    }
+  }
+  return decVal;
+};
+//3
+
+
+//4
+class Player {
+  firstname: string;
+  lastname: string;
+  number: number;
+  age: number;
+  constructor(
+    firstname: string,
+    lastname: string,
+    number: number,
+    age: number
+  ) {
+    this.firstname = firstname;
+    this.lastname = lastname;
+    this.number = number;
+    this.age = age;
+  }
+}
+const getAverageAge = function (players: Player[]) {
+  return players.reduce((prev, user) => prev + players.age, 0)/players.length
+}
+
+//5
